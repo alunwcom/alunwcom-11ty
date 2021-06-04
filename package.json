@@ -1,0 +1,22 @@
+{
+  "name": "alunwcom-11ty",
+  "version": "0.0.1",
+  "description": "Eleventy experiment with my (barely used) blog site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alunwcom/alunwcom-11ty.git"
+  },
+  "author": "Alun 'Will' Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alunwcom/alunwcom-11ty/issues"
+  },
+  "homepage": "https://github.com/alunwcom/alunwcom-11ty#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
