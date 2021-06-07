@@ -1,0 +1,27 @@
+<!-- partials/navbar start -->
+
+{{ $currentPage := . }}
+{{ $homepage := .GetPage "/" }}
+
+<nav class="row navbar sticky-top navbar-expand-md navbar-light pt-0 pb-0">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {{ if .IsHome -}}active{{- end -}}"><a class="nav-link main-nav" href="/">{{ .Site.Title }}</a></li>
+            {{ range $homepage.Data.Pages }}
+                {{ $active := (hasPrefix $currentPage.RelPermalink .RelPermalink) }}
+                <li class="nav-item {{ if $active -}}active{{- end -}}"><a class="nav-link main-nav" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+{{ if (not .IsHome) }}
+    <ol class="row breadcrumb rounded-0 pl-3 pt-1 pb-2 mb-0">
+        {{ partial "breadcrumbnav.html" (dict "p1" . "p2" .) }}
+    </ol>
+{{ end }}
+
+<!-- partials/navbar end -->

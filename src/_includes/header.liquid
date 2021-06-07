@@ -1,0 +1,19 @@
+<!-- partials/header start -->
+<div class="row pl-0 pr-0">
+    {{ if .IsHome }}
+    {{/* Home page hero banner here */}}
+    <div class="col jumbotron-fluid p-4 p-md-5 text-white bg-dark" style="background-image: url(/images/sacalobra-edit2.jpg); background-size: cover;">
+        <div class="col-md-10 px-0">
+            <h1 class="h1">{{ .Description }}</h1>
+
+            <p class="lead my-3 font-italic">{{ .Summary }}</p>
+        </div>
+    </div>
+{{ else }}
+    {{/* Smaller banner here */}}
+    <div class="col jumbotron-fluid p-3 text-white bg-dark">
+        <h1 class="h3">{{ .Title }}</h1>
+    </div>
+{{ end }}
+</div>
+<!-- partials/header end -->

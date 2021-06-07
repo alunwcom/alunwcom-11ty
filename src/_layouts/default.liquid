@@ -1,11 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My Blog</title>
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    {{ content }}
-  </body>
+{% include head %}
+<body>
+  <div class="container main-body border-left border-right border-dark">
+{% include navbar %}
+{% include header %}
+    <div class="row pt-1 pl-0 pr-0 pb-1">
+      <div class="col article-body">
+        {{ content }}
+      </div>
+    </div>
+{% include footer %}
+  </div>
+</body>
 </html>
