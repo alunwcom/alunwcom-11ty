@@ -1,6 +1,6 @@
 ---
 layout: default
-title: alunw.com
+title: Home
 ---
 
 ## still here after all these years
