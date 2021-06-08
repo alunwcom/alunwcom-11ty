@@ -1,7 +1,13 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const now = String(Date.now())
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.setUseGitIgnore(false)
+  eleventyConfig.addWatchTarget('./_tmp/style.css')
+  eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' })
+  eleventyConfig.addShortcode('version', function () {
+    return now
+  })
+
     eleventyConfig.addPassthroughCopy({'static':'.'});
     return {
         dir: {
