@@ -1,11 +1,16 @@
 <!-- partials/footer start -->
 <footer class="row footer">
     <div class="col text-muted">Built with
-        <a class="text-muted" href="https://gohugo.io/">Hugo</a>
+        <a class="text-muted" href="https://www.11ty.dev/" target="_blank">11ty</a>
         and
         <a class="text-muted" href="https://getbootstrap.com/">Bootstrap</a>
         by
-        <a class="text-muted" href="https://twitter.com/alunwcom">@alunwcom</a>.
+        <a class="text-muted" href="https://github.com/alunwcom">alunwcom</a>.
     </div>
 </footer>
+<div>{{ page }}</div>
+{% for item in collections.post reversed %}
+<div><a href="{{ item.url }}">[{{ item.data.date }}] {{ item.data.title }}</a></div>
+{% endfor %}
+
 <!-- partials/footer end -->
